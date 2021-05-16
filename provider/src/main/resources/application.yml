@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      enabled: true
+  application:
+    name: provider
+server:
+  port: 8083
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: '*'
+rocketmq:
+  name-server: 39.96.18.196:9876
+  producer:
+    group: myprovider
+    send-message-timeout: 6000
